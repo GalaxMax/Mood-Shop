@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mood Shop</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+<ul>
+    <li><a class="active" href="cart.html"><h2>Cart</h2><p>Takes you to your cart. Your items are saved for
+    future visits, so you can always pick up where you last ended.</p></a></li>
+</ul>
+
+<div class="shop">
+    <div class="item">
+        <h2>Happiness</h2>
+        <p>Buy a week's worth of happiness for this great price! Getting your daily dose of happiness is
+        unreliable, however, with this great product you can be consistently happy!</p>
+        <h3 class="price">39€</h3>
+        <button id="hap">Buy</button>
+    </div>
+    <div class="item">
+        <h2>Adrenalin Rush</h2>
+        <p>Covid has been running the streets the past years, and honestly it makes our day-to-day life a huge lump
+        of boredom. Fret not! With Adrenalin Rush you can get your weekly surge of excitement at home.</p>
+        <h3 class="price">59€</h3>
+        <button id="adr">Buy</button>
+    </div>
+    <div class="item">
+        <h2>Laughing Matter</h2>
+        <p>Let's face it, the older we get the less we laugh. Some people rarely have a good laugh at all. With this,
+        Laughing Matter, you can now have your share of laughter for 3 hours each consumable!</p>
+        <h3 class="price">34€</h3>
+        <button id="lau">Buy</button>
+    </div>
+    <div class="item">
+        <h2>Time killer</h2>
+        <p>Everyone has their favourite part of the day, and going through the dread and boredom that comes with a
+        full day can be tormenting. Therefore, we have developed Time Killer, the easiest way to skip 5 hours of your
+        day!</p>
+        <h3 class="price">25€</h3>
+        <button id="tim">Buy</button>
+    </div>
+    <div class="item">
+        <h2>Wish Waker</h2>
+        <p>Getting out of bed on a monday morning can feel like the worst chore in the whole week. Wish Waker aims at
+        waking you up within 5 minutes after consumed!</p>
+        <h3 class="price">20€</h3>
+        <button id="wis">Buy</button></div>
+</div>
+</body>
+<script>
+    let hapinessButtonEl = document.querySelector("#hap");
+    let adrenalinRushButtonEl = document.querySelector("#adr");
+    let laughingMatterButtonEl = document.querySelector("#lau");
+    let timeKillerButtonEl = document.querySelector("#tim");
+    let wishWakerButtonEl = document.querySelector("#wis");
+
+    hapinessButtonEl.addEventListener("click", hapAdd);
+    adrenalinRushButtonEl.addEventListener("click", adrAdd);
+    laughingMatterButtonEl.addEventListener("click", lauAdd);
+    timeKillerButtonEl.addEventListener("click", timAdd);
+    wishWakerButtonEl.addEventListener("click", wisAdd);
+
+    function hapAdd() {
+        if (localStorage.hapiness) {
+            localStorage.hapiness = Number(localStorage.hapiness) + 1;
+        }
+        else {
+            localStorage.hapiness = 1;
+        }
+        alert("Added to cart")
+    }
+
+    function adrAdd() {
+        if (localStorage.adrenalin) {
+            localStorage.adrenalin = Number(localStorage.adrenalin) + 1;
+        }
+        else {
+            localStorage.adrenalin = 1;
+        }
+        alert("Added to cart")
+    }
+
+    function lauAdd() {
+        if (localStorage.laughing) {
+            localStorage.laughing = Number(localStorage.laughing) + 1;
+        }
+        else {
+            localStorage.laughing = 1;
+        }
+        alert("Added to cart")
+    }
+
+    function timAdd() {
+        if (localStorage.time) {
+            localStorage.time = Number(localStorage.time) + 1;
+        }
+        else {
+            localStorage.time = 1;
+        }
+        alert("Added to cart")
+    }
+
+    function wisAdd() {
+        if (localStorage.waker) {
+            localStorage.waker = Number(localStorage.waker) + 1;
+        }
+        else {
+            localStorage.waker = 1;
+        }
+        alert("Added to cart")
+    }
+</script>
+</html>

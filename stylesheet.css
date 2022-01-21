@@ -1,0 +1,99 @@
+body {
+    margin:0;
+    background-color: ghostwhite;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    width: 100%;
+}
+li {
+    float: right;
+}
+li a {
+    display: block;
+    color: black;
+    text-align: left;
+    width: 165px;
+    height: 340px;
+    text-decoration: none;
+    border-style: solid;
+    border-color: black;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 16px;
+
+}
+li a:hover:not(.title) {
+    background-color: rebeccapurple;
+}
+.active {
+    background-color: mediumpurple;
+}
+.shop {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+    border-radius: 15px;
+    margin: 10px;
+    padding: 16px;
+    width: 200px;
+    height: 340px;
+    border-style: dashed;
+    border-color: black;
+    position: relative;
+}
+.price {
+    position:absolute;
+    bottom:0;
+}
+button{
+    position:absolute;
+    bottom:14px;
+    right: 10px;
+    border-radius: 15px;
+    background-color: purple;
+    border: none;
+    color: white;
+    padding: 9px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#happ {
+    border-style: solid;
+    border-color: black;
+    width: 350px;
+    cursor: pointer;
+}
+#adrr {
+    border-style: solid;
+    border-color: black;
+    width: 350px;
+    cursor: pointer;
+}
+#lauu {
+    border-style: solid;
+    border-color: black;
+    width: 350px;
+    cursor: pointer;
+}
+#timm {
+    border-style: solid;
+    border-color: black;
+    width: 350px;
+    cursor: pointer;
+}
+#wiss {
+    border-style: solid;
+    border-color: black;
+    width: 350px;
+    cursor: pointer;
+}

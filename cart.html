@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+<ul>
+    <li><a class="active" href="index.html"><h2>Shopping</h2><p>Return back to shopping.</p></a></li>
+</ul>
+<h1>Total:</h1>
+<p id="happ"></p>
+<p id="adrr"></p>
+<p id="lauu"></p>
+<p id="timm"></p>
+<p id="wiss"></p>
+<p id="sum"></p>
+</body>
+<script>
+    let hapinessEl = document.querySelector("#happ");
+    let adrenalinRushEl = document.querySelector("#adrr");
+    let laughingMatterEl = document.querySelector("#lauu");
+    let timeKillerEl = document.querySelector("#timm");
+    let wishWakerEl = document.querySelector("#wiss");
+    let sumEl = document.querySelector("#sum");
+    let hapiness = 0
+    let adrenalin = 0
+    let laughing = 0
+    let time = 0
+    let waker = 0
+
+    hapinessEl.addEventListener("click", happAdd);
+    adrenalinRushEl.addEventListener("click", adrrAdd);
+    laughingMatterEl.addEventListener("click", lauuAdd);
+    timeKillerEl.addEventListener("click", timmAdd);
+    wishWakerEl.addEventListener("click", wissAdd);
+
+    function happAdd(){
+        localStorage.removeItem("hapiness");
+        location.reload();
+    }
+    function adrrAdd(){
+        localStorage.removeItem("adrenalin");
+        location.reload();
+    }
+    function lauuAdd(){
+        localStorage.removeItem("laughing");
+        location.reload();
+    }
+    function timmAdd(){
+        localStorage.removeItem("time");
+        location.reload();
+    }
+    function wissAdd(){
+        localStorage.removeItem("waker");
+        location.reload();
+    }
+
+    if (localStorage.hapiness) {
+        hapinessEl.innerHTML = 'Happiness: x' + localStorage.hapiness + ' = ' + localStorage.hapiness * 39 + '€ Click to remove from cart'
+        hapiness = Number(localStorage.hapiness)
+    }
+    if (localStorage.adrenalin) {
+        adrenalinRushEl.innerHTML = 'Adrenalin: x' + localStorage.adrenalin + ' = ' + localStorage.adrenalin * 59 + '€ Click to remove from cart'
+        adrenalin = Number(localStorage.adrenalin)
+    }
+    if (localStorage.laughing) {
+        laughingMatterEl.innerHTML = 'Laughing: x' + localStorage.laughing + ' = ' + localStorage.laughing * 34 + '€ Click to remove from cart'
+        laughing = Number(localStorage.laughing)
+    }
+    if (localStorage.time) {
+        timeKillerEl.innerHTML = 'Time Killer: x' + localStorage.time + ' = ' + localStorage.time * 25 + '€ Click to remove from cart'
+        time = Number(localStorage.time)
+    }
+    if (localStorage.waker) {
+        wishWakerEl.innerHTML = 'Waker: x' + localStorage.waker + ' = ' + localStorage.waker * 20 + '€ Click to remove from cart'
+        waker = Number(localStorage.waker)
+    }
+
+    sum = hapiness * 39 + adrenalin * 59 + laughing * 34 + time * 25 + waker * 20
+    console.log(sum)
+    sumEl.innerHTML = 'The sum is ' + sum + '€'
+</script>
+</html>
