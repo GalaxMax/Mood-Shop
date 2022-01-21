@@ -9,6 +9,7 @@
 <ul>
     <li><a class="active" href="index.html"><h2>Shopping</h2><p>Return back to shopping.</p></a></li>
 </ul>
+<div>
 <h1>Total:</h1>
 <p id="happ"></p>
 <p id="adrr"></p>
@@ -16,6 +17,8 @@
 <p id="timm"></p>
 <p id="wiss"></p>
 <p id="sum"></p>
+<button id="cancell">Cancell Order</button>
+</div>
 </body>
 <script>
     let hapinessEl = document.querySelector("#happ");
@@ -24,6 +27,7 @@
     let timeKillerEl = document.querySelector("#timm");
     let wishWakerEl = document.querySelector("#wiss");
     let sumEl = document.querySelector("#sum");
+    let cancellEl = document.querySelector("#cancell")
     let hapiness = 0
     let adrenalin = 0
     let laughing = 0
@@ -35,6 +39,7 @@
     laughingMatterEl.addEventListener("click", lauuAdd);
     timeKillerEl.addEventListener("click", timmAdd);
     wishWakerEl.addEventListener("click", wissAdd);
+    cancellEl.addEventListener("click", del);
 
     function happAdd(){
         localStorage.removeItem("hapiness");
@@ -81,5 +86,14 @@
     sum = hapiness * 39 + adrenalin * 59 + laughing * 34 + time * 25 + waker * 20
     console.log(sum)
     sumEl.innerHTML = 'The sum is ' + sum + '€'
+
+    function del (){
+        localStorage.removeItem("waker");
+        localStorage.removeItem("time");
+        localStorage.removeItem("laughing");
+        localStorage.removeItem("adrenalin");
+        localStorage.removeItem("hapiness");
+        location.reload()
+    }
 </script>
 </html>
